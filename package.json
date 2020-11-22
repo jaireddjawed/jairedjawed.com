@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "cd frontend && yarn run build && ../ && node index.js"
+    "start": "npm install && cd frontend && npm install && yarn run build && ../ && node index.js"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.2.2",
