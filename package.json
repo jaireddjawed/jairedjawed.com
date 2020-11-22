@@ -1,0 +1,17 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "cd frontend && yarn run build && ../ && node index.js"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.2.2",
+    "express": "^4.17.1",
+    "yup": "^0.29.3"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
