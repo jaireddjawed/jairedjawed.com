@@ -1,33 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Footer extends Component {
-  render() {
-
-    if (this.props.data) {
-      var networks = this.props.data.social.map(function (network) {
-        return <li key={network.name}><a href={network.url}><i className={network.className} /></a></li>
-      })
-    }
-
-    return (
-      <footer>
-
-        <div className="row">
-          <div className="twelve columns">
-            <ul className="social-links">
-              {networks}
-            </ul>
-
-            <ul className="copyright">
-              <li>&copy; {new Date().getFullYear()} Jaired Jawed</li>
-            </ul>
-
-          </div>
-          <div id="go-top"><a className="smoothscroll" title="Back to Top" href="#home"><i className="icon-up-open"></i></a></div>
+function Footer({ data: { social } }) {
+  return (
+    <footer>
+      <div className="row">
+        <div className="twelve columns">
+          <ul className="social-links">
+            {social.map(({ name, url, className }) => (
+              <li key={name}>
+                <a href={url}><i className={className} /></a>
+              </li>
+            ))}
+          </ul>
+          <ul className="copyright">
+            <li>&copy; {new Date().getFullYear()} Jaired Jawed.</li>
+          </ul>
         </div>
-      </footer>
-    );
-  }
+        <div id="go-top">
+          <a className="smoothscroll" title="Back to Top" href="#home"><i className="icon-up-open" /></a>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;
