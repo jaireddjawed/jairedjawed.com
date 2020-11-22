@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import ReactGA from 'react-ga';
-import $ from 'jquery';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import About from './components/About';
@@ -9,46 +7,43 @@ import Contact from './components/Contact';
 import Portfolio from './components/Portfolio';
 
 class App extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
+
     this.state = {
-      foo: 'bar',
+      loading: true,
       resumeData: {}
     };
-
-    ReactGA.initialize('UA-110570651-1');
-    ReactGA.pageview(window.location.pathname);
   }
 
-  getResumeData(){
-    $.ajax({
-      url:'./resumeData.json',
-      dataType:'json',
-      cache: false,
-      success: function(data){
-        this.setState({resumeData: data});
-      }.bind(this),
-      error: function(xhr, status, err){
-        console.log(err);
-        alert(err);
-      }
-    });
+  getResumeData() {
+    fetch('./resumeData.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ loading: false, resumeData: data });
+      })
+      .catch(err => console.log(err))
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.getResumeData();
   }
 
   render() {
+    const { loading, resumeData } = this.state;
+    
+    if (loading) {
+      return <React.Fragment />;
+    }
+
     return (
       <div className="App">
-        <Header data={this.state.resumeData.main}/>
-        <About data={this.state.resumeData.main}/>
-        <Resume data={this.state.resumeData.resume}/>
-        <Portfolio data={this.state.resumeData.portfolio}/>
-        <Contact data={this.state.resumeData.main}/>
-        <Footer data={this.state.resumeData.main}/>
+        <Header data={resumeData.main}/>
+        <About data={resumeData.main}/>
+        <Portfolio data={resumeData.portfolio}/>
+        <Resume data={resumeData.resume}/>
+        <Contact data={resumeData.main}/>
+        <Footer data={resumeData.main} />
       </div>
     );
   }
