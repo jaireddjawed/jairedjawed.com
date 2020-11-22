@@ -230,10 +230,15 @@ ul#nav li.current a { color: #fe6928; }
 #resume .header-col { padding-top: 9px; }
 #resume .main-col { padding-right: 10%; }
 
-.work {
+.education {
    margin-bottom: 48px;
    padding-bottom: 24px;
    border-bottom: 1px solid #E8E8E8;
+}
+
+.work-details {
+   list-style-type: disc;
+   margin-left: 20px;
 }
 
 #resume .info {
@@ -275,13 +280,17 @@ ul#nav li.current a { color: #fe6928; }
    background: #fff;
    overflow: hidden;
    position: relative;
-
+   height: 200px;
    -webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
+.portfolio-item .item-wrap .card{
+   height: 100%
+}
+
 .portfolio-item .item-wrap a {
    display: block;
    cursor: pointer;
@@ -346,10 +355,12 @@ ul#nav li.current a { color: #fe6928; }
 
 /* on hover */
 .portfolio-item:hover .overlay {
-	opacity: 1;
+	opacity: .9;
 	-moz-opacity: 1;
-	filter:alpha(opacity=100);
+   filter:alpha(opacity=100);
+   background-color: black;
 }
+
 .portfolio-item:hover .link-icon {
    opacity: 1;
 	-moz-opacity: 1;
@@ -697,4 +708,7 @@ footer .social-links li:first-child { margin-left: 0; }
 }
 .github-btn{
    background-color: #34495e !important;
+}
+.linkedin-btn {
+   background-color: #0e76a8 !important;
 }
