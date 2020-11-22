@@ -14,15 +14,19 @@ class About extends Component {
       return (
          <section id="about">
             <div className="row">
-               <div className="six columns main-col">
+               <div className="five columns main-col">
                   <h2>About Me</h2>
 
                   <p>{bio}</p>
                </div>
-               <div className="three columns contact-details">
+               <div className="four columns contact-details">
                   <h2>Email Address</h2>
                   <p className="address">
                      <span><a href={`mailto:${email}`}>{email}</a></span>
+                  </p>
+                  <h2>Phone Number</h2>
+                  <p className="phone">
+                     <span><a href={`tel:${phone}`}>{phone}</a></span>
                   </p>
                </div>
             </div>
