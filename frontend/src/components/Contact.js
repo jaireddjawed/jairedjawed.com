@@ -1,74 +1,69 @@
 import React, { Component } from 'react';
 import { Formik, Form } from 'formik';
+import { object, string } from 'yup';
+import TextField from './TextField';
 
 class Contact extends Component {
    render() {
-
-      if (this.props.data) {
-         var name = this.props.data.name;
-         var phone = this.props.data.phone;
-         var email = this.props.data.email;
-         var message = this.props.data.contactmessage;
-      }
-
       return (
          <section id="contact">
-
             <div className="row section-head">
-
                <div className="two columns header-col">
-
-                  <h1><span>Get In Touch.</span></h1>
-
+                  <h1>
+                     <span>Get In Touch.</span>
+                  </h1>
                </div>
-
-               <div className="ten columns">
-
-                  <p className="lead">{message}</p>
-
-               </div>
-
             </div>
 
             <div className="row">
                <div className="nine columns">
-
-                  <form action="" method="post" id="contactForm" name="contactForm">
-                     <fieldset>
-
-                        <div>
-                           <label htmlFor="contactName">Name <span className="required">*</span></label>
-                           <input type="text" defaultValue="" size="35" id="contactName" name="contactName" onChange={this.handleChange} />
-                        </div>
-
-                        <div>
-                           <label htmlFor="contactEmail">Email <span className="required">*</span></label>
-                           <input type="text" defaultValue="" size="35" id="contactEmail" name="contactEmail" onChange={this.handleChange} />
-                        </div>
-
-                        <div>
-                           <label htmlFor="contactSubject">Subject</label>
-                           <input type="text" defaultValue="" size="35" id="contactSubject" name="contactSubject" onChange={this.handleChange} />
-                        </div>
-
-                        <div>
-                           <label htmlFor="contactMessage">Message <span className="required">*</span></label>
-                           <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
-                        </div>
-
-                        <div>
-                           <button className="submit">Submit</button>
-                           <span id="image-loader">
-                              <img alt="" src="images/loader.gif" />
-                           </span>
-                        </div>
-                     </fieldset>
-                  </form>
-
-                  <div id="message-warning"> Error boy</div>
-                  <div id="message-success">
-                     <i className="fa fa-check"></i>Your message was sent, thank you!<br />
-                  </div>
+                  <Formik
+                     initialValues={{ name: '', email: '', subject: '', message: '' }}
+                     validationSchema={object().shape({
+                        name: string().required(),
+                        email: string().email().required(),
+                        subject: string().required(),
+                        message: string().required(),
+                     })}
+                     onSubmit={async ({ name, email, subject, message }, { resetForm }) => {
+                        await fetch('/send-email', {
+                           headers: {
+                              Accept: 'application/json',
+                              'Content-Type': 'application/json'
+                           },
+                           method: 'POST',
+                           body: JSON.stringify({
+                              name,
+                              email,
+                              subject,
+                              message
+                           }),
+                        })
+                           .then(() => {
+                              alert('Thank you for submitting your contact info. I will reply shortly.');
+                              resetForm();
+                           })
+                           .catch(err => {
+                              alert(err.message);
+                           });
+                     }}
+                     render={({ handleSubmit }) => (
+                        <Form id="contactForm" onSubmit={handleSubmit}>
+                           <fieldset>
+                              <TextField name="name" label="Name" />
+                              <TextField type="email" name="email" label="Email" />
+                              <TextField name="subject" label="Subject" />
+                              <TextField name="message" label="Message" isTextarea />
+                              <div>
+                                 <button type="submit" className="submit">Submit</button>
+                                 <span id="image-loader">
+                                    <img alt="" src="images/loader.gif" />
+                                 </span>
+                              </div>
+                           </fieldset>
+                        </Form>
+                     )}
+                  />
                </div>
             </div>
          </section>
