@@ -288,7 +288,8 @@ ul#nav li.current a { color: #fe6928; }
 	transition: all 0.3s ease-in-out;
 }
 .portfolio-item .item-wrap .card{
-   height: 100%
+   height: 100%;
+   background-color: black;
 }
 
 .portfolio-item .item-wrap a {
@@ -340,8 +341,9 @@ ul#nav li.current a { color: #fe6928; }
    margin-top: -15px;
 }
 .portfolio-item .item-wrap img {
-   vertical-align: bottom;
+   object-fit: cover;
 }
+
 .portfolio-item .portfolio-item-meta { padding: 18px }
 .portfolio-item .portfolio-item-meta h5 {
    font: 14px/21px 'opensans-bold', sans-serif;
