@@ -1,105 +1,102 @@
 {
   "main": {
     "name":"Nordic-Giant Project",
-    "description":"I am a web development engineer and I use react and python to develop pages. This project is a resume template that can be used as the project home page or resume page",
-    "bio":"Use this bio section as your way of describing yourself and saying what you do, what technologies you like to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing in.",
-    "contactmessage":"Here is where you should write your message to readers to have them get in contact with you.",
+    "bio":"As a developer, my motto is if I am the smartest person in the room, I’m in the wrong room. I love to learn from people with different perspectives on a project and want to become the best developer I can be.",
     "email": "me@jairedjawed.com",
-    "phone": "951-437-9849",
-    "github":"https://github.com/nordicgiant2/react-nice-resume",
-    "project":"https://github.com/nordicgiant2/react-nice-resume",
-    "website": "http://www.jairedjawed.com",
-    "resumedownload":"http://timbakerdev.com",
+    "phone": "(951)-437-9849",
+    "resumedownload":"./Resume.pdf",
     "social":[
-      {
-        "name":"github",
-        "url":"https://github.com/jaireddjawed",
-        "className":"fa fa-github"
-      },
       {
         "name":"linkedin",
         "url":"https://www.linkedin.com/in/jaired/",
         "className":"fa fa-linkedin"
+      },
+      {
+        "name":"github",
+        "url":"https://github.com/jaireddjawed",
+        "className":"fa fa-github"
       }
     ]
   },
   "resume":{
-    "skillmessage":"Here you can create a short write-up of your skills to show off to employers",
     "education":[
       {
-        "school":"University of California - Riverside",
+        "school": "University of California - Riverside",
         "degree": "B.S. Computer Science",
-        "graduated": "2022"
+        "graduated": "Jun 2022"
       },
       {
         "school": "Moreno Valley College",
         "degree": "A.S. Computer Science, Math & Science",
-        "graduated": "2020"
+        "graduated": "Jun 2020"
       }
     ],
     "work":[
       {
         "company": "2U",
-        "title": "Senior Tutor",
-        "years": "April 2020 - Present",
-        "description": "Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
-      },
-      {
-        "company": "2U",
-        "title": "Tutor",
-        "years": "Jan 2020 - Apr 2020"
+        "title":"Senior Software Development Tutor",
+        "years":"Jan 2020 - Present",
+        "details": [
+          "Tutored coding boot camp students in full-stack web development and data visualization by using technologies such as React.JS, Node.JS, D3.JS, Pandas, Matplotlib, Visual Basic, & SQL",
+          "Developed Python program to automatically send session confirmation emails to all students"
+        ]
       },
       {
         "company": "Base 11",
-        "title": "Intern",
+        "title": "Software Engineer Intern",
         "years": "Jul 2020 - Aug 2020",
-        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+        "details": [
+          "Produced 3D models of objects by using OnShape and NX CAD software",
+          "Developed Python program to control a Raspberry Pi-powered rover remotely through keyboard and voice through web sockets and the wit.ai API"
+        ]
       },
       {
-        "company": "Moreno Valley College",
-        "title": "Student Aide II",
-        "years": "Aug 2019 - Aug 2020",
-        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+        "company":"Moreno Valley College",
+        "title":"Student Aide II",
+        "years":"Aug 2019 - Dec 2020",
+        "details": [
+          "Influenced K-12 students at local schools and colleges to choose STEM careers",
+          "Produced objects from 3D printers by using CAD software",
+          "Developed Raspberry Pi program to detect local radiation exposure with a Geiger Counter"
+        ]
       },
       {
         "company": "Crowdbotics",
-        "title": "Software Engineer (Contract)",
+        "title": "Contract Software Engineer",
         "years": "Aug 2019 - Dec 2019",
-        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+        "details": [
+          "Developed minimum viable iOS and Android apps for The Shoeshine Guild, a business that handles shoeshines and repairs for more than 5000 monthly customers",
+          "Implemented user authentication, payment processing, and push notifications by using React Native, Expo, Stripe, and Firebase",
+          "Implemented delivery service by using Postmates API"
+        ]
       }
     ]
   },
   "portfolio":{
     "projects": [
       {
-        "title":"Canadian Wanderlust",
-        "category":"My Travel Blog for my post-university travels",
-        "image":"canadian-wanderlust.jpg",
-        "url":"https://www.canadianwanderlust.com"
+        "title":"PowerPaint",
+        "category":"A real-time paint application where you can collaborate on drawings with others",
+        "image":"powerpaint.png",
+        "url":"https://powerpaint.herokuapp.com"
       },
       {
-        "title":"Fury Fighting Gear",
-        "category":"(offline now) A fighting gear company I started",
-        "image":"fury-fighting-gear.jpg",
-        "url":"http://www.timbakerdev.com"
+        "title":"Two-Factor Authentication Meteor",
+        "category":"A demonstration of integrating two-factor authentication into the Meteor.js Accounts package using the Twilio API",
+        "image":"twofactorauth.png",
+        "url":"https://twofactormeteor.herokuapp.com/"
       },
       {
-        "title":"Original Thai Food",
-        "category":"Website I built for a restaurant I like in Thailand",
-        "image":"original-thai-food.jpg",
-        "url":"http://www.timbakerdev.com/originalthaifood.github.io"
+        "title":"Auto Student Email",
+        "category":"A program that automatically sends out confirmation emails to coding boot camp students.",
+        "image":"autostudentemail.png",
+        "url":"https://github.com/jaireddjawed/auto-student-email"
       },
       {
-        "title":"Resume Website",
-        "category":"A React based resume website template",
-        "image":"resume-website.jpg",
-        "url":"http://www.timbakerdev.com"
-      },
-      {
-        "title":"Smirkspace",
-        "category":"(MVP Only) A React and Meteor based chat University project.",
-        "image":"smirkspace.jpg",
-        "url":"http://www.smirkspace.com"
+        "title":"Shoeshine Guild",
+        "category":"An iOS app where customers can request for their shoes to be shined or repaired and have it delivered to their house using the Postmates API",
+        "image":"shoeshine.png",
+        "url":"https://apps.apple.com/us/app/the-shoeshine-guild/id1477500668"
       }
     ]
   }
