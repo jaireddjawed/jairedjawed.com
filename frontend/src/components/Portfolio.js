@@ -1,47 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Portfolio extends Component {
-  render() {
+function Portfolio({ data }) {
+  return (
+    <section id="portfolio">
+      <div className="row">
+        <div className="twelve columns collapsed">
+          <h1>Portfolio</h1>
 
-    if (this.props.data) {
-      var projects = this.props.data.projects.map(function (projects) {
-        var projectImage = 'images/portfolio/' + projects.image;
-        
-        return (
-          <div key={projects.title} className="columns portfolio-item">
-            <div className="item-wrap">
-              <a href={projects.url} title={projects.title}>
-                <img alt={projects.title} src={projectImage} />
-                <div className="overlay">
-                  <div className="portfolio-item-meta">
-                    <h5>{projects.title}</h5>
-                    <p>{projects.category}</p>
+          <div id="portfolio-wrapper" className="bgrid-halves s-bgrid-thirds cf">
+            {data.projects.map(project => (
+              <div key={project.title} className="six columns portfolio-item">
+                <div className="item-wrap">
+                  <div className="card">
+                    <a href={project.url} title={project.title}>
+                      <img alt={project.title} src={`/images/${project.image}`} />
+                      <div className="overlay">
+                        <div className="portfolio-item-meta">
+                          <h5>{project.title}</h5>
+                          <p>{project.category}</p>
+                        </div>
+                      </div>
+                    </a>
                   </div>
                 </div>
-              </a>
-            </div>
-          </div>
-        )
-      })
-    }
-
-    return (
-      <section id="portfolio">
-
-        <div className="row">
-
-          <div className="twelve columns collapsed">
-
-            <h1>Portfolio</h1>
-
-            <div id="portfolio-wrapper" className="bgrid-quarters s-bgrid-thirds cf">
-              {projects}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
 }
 
 export default Portfolio;
