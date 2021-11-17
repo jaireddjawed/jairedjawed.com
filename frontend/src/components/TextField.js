@@ -6,7 +6,7 @@ const TextField = ({ type, name, label, isTextarea = false, ...rest }) => (
   <Field
     type={type}
     name={name}
-    render={({ field: { value, onChange }, form: { isSubmitting, errors } }) => (
+    render={({ field: { value, onChange }, form: { isSubmitting, touched, errors } }) => (
       <div>
         <label htmlFor={name}>{label}</label>
         {isTextarea ? (
@@ -28,7 +28,7 @@ const TextField = ({ type, name, label, isTextarea = false, ...rest }) => (
             {...rest}
           />
         )}
-        {errors[name] ? <p>{errors[name]}</p> : null}
+        {errors[name] && touched[name] ? <p style={{ color: 'red' }}>{errors[name]}</p> : null}
       </div>
     )}
   />
