@@ -545,7 +545,6 @@ call-to-action .button {
    margin: 12px 0;
    color: #EBEEEE;
 	display: inline-block;
-	float: left;
    width: 26%;
 }
 #contact input,
@@ -577,7 +576,6 @@ call-to-action .button {
    height: auto;
    display: inline-block;
 	border-radius: 0px;
-   margin-left: 26%;
 }
 #contact button.submit:hover {
 	color: #0D0D0D;
@@ -713,4 +711,7 @@ footer .social-links li:first-child { margin-left: 0; }
 }
 .linkedin-btn {
    background-color: #0e76a8 !important;
+}
+.recaptcha-container {
+   margin: 14px 0px;
 }
