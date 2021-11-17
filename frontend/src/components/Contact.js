@@ -57,7 +57,7 @@ function Contact() {
                            <TextField name="message" label="Message" isTextarea />
                            <div className="recaptcha-container">
                               <Recaptcha
-                                 sitekey="6LetTjwdAAAAAKAB7KX_b7n64-UiDg57azXbxFFJ"
+                                 sitekey="6LfxJD0dAAAAAAUhssWDoUGVBA3mINP0PAfNo7rk"
                                  render="explicit"
                                  onChange={(value) => {
                                     setFieldValue('recaptchaToken', value);
@@ -67,8 +67,6 @@ function Contact() {
                            </div>
                            <div>
                               <button
-                                 data-sitekey="6LetTjwdAAAAAKAB7KX_b7n64-UiDg57azXbxFFJ"
-                                 data-action='submit'
                                  type="submit"
                                  className="submit"
                               >
