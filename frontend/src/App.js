@@ -31,18 +31,18 @@ class App extends Component {
 
   render() {
     const { loading, resumeData } = this.state;
-    
+
     if (loading) {
       return <React.Fragment />;
     }
 
     return (
       <div className="App">
-        <Header data={resumeData.main}/>
-        <About data={resumeData.main}/>
-        <Portfolio data={resumeData.portfolio}/>
-        <Resume data={resumeData.resume}/>
-        <Contact data={resumeData.main}/>
+        <Header data={resumeData.main} />
+        <About data={resumeData.main} />
+        <Portfolio data={resumeData.portfolio} />
+        <Resume data={resumeData.resume} />
+        <Contact data={resumeData.main} />
         <Footer data={resumeData.main} />
       </div>
     );
