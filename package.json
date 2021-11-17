@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "yarn install && cd frontend && yarn install && yarn build && cd ..",
+    "build": "cd frontend && yarn install && yarn build",
     "start": "node index.js"
   },
   "dependencies": {
