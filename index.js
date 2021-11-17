@@ -5,8 +5,10 @@ const sendgrid = require('@sendgrid/mail');
 const axios = require('axios').default;
 const fs = require('fs');
 
-const dotenv = require('dotenv');
-dotenv.config({ silent: process.env.NODE_ENV === 'production' });
+if (process.env.NODE_ENV !== 'production') {
+  const dotenv = require('dotenv');
+  dotenv.config();
+}
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
