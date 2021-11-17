@@ -4,9 +4,10 @@ const app = express();
 const sendgrid = require('@sendgrid/mail');
 const axios = require('axios').default;
 const fs = require('fs');
-const dotenv = require('dotenv');
 
-dotenv.config();
+const dotenv = require('dotenv');
+dotenv.config({ silent: process.env.NODE_ENV === 'production' });
+
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 app.use(express.json());
