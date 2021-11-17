@@ -22,16 +22,17 @@
     "education":[
       {
         "school": "University of California - Riverside",
-        "degree": "B.S. Computer Science",
-        "graduated": "Jun 2022"
+        "degree": "M.S. Computer Science",
+        "graduated": "Jun 2023"
       },
       {
-        "school": "Moreno Valley College",
-        "degree": "A.S. Computer Science, Math & Science",
-        "graduated": "Jun 2020"
+        "school": "University of California - Riverside",
+        "degree": "B.S. Computer Science",
+        "graduated": "Jun 2022"
       }
     ],
     "work":[
+      
       {
         "company": "2U",
         "title":"Senior Software Development Tutor",
@@ -39,6 +40,15 @@
         "details": [
           "Tutored coding boot camp students in full-stack web development and data visualization by using technologies such as React.JS, Node.JS, D3.JS, Pandas, Matplotlib, Visual Basic, & SQL",
           "Developed Python program to automatically send session confirmation emails to all students"
+        ]
+      },
+      {
+        "company": "Chegg",
+        "title":"Software Engineer Intern",
+        "years":"Jun 2021 - Aug 2021",
+        "details": [
+          "Developed web application to replace Adminer, an internal legacy application that allows staff to input SQL queries into the production database",
+          "Reduced website outages by verifying that database modifications inputted by employees would not remove sensitive information"
         ]
       },
       {
