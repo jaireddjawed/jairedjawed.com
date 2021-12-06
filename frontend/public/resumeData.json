@@ -32,9 +32,14 @@
       }
     ],
     "work":[
-      
       {
-        "company": "2U",
+        "company": "HashiCorp Inc.",
+        "title":"Software Engineer Intern",
+        "years":"Starting Jun 2022",
+        "details": []
+      },
+      {
+        "company": "2U Inc.",
         "title":"Senior Software Development Tutor",
         "years":"Jan 2020 - Present",
         "details": [
@@ -43,7 +48,7 @@
         ]
       },
       {
-        "company": "Chegg",
+        "company": "Chegg Inc.",
         "title":"Software Engineer Intern",
         "years":"Jun 2021 - Aug 2021",
         "details": [
@@ -71,7 +76,7 @@
         ]
       },
       {
-        "company": "Crowdbotics",
+        "company": "Crowdbotics Inc.",
         "title": "Contract Software Engineer",
         "years": "Aug 2019 - Dec 2019",
         "details": [
