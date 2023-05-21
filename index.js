@@ -10,7 +10,9 @@ if (process.env.NODE_ENV !== 'production') {
   dotenv.config();
 }
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+if (process.env.SENDGRID_API_KEY !== undefined) {
+  sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+}
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -21,25 +23,33 @@ const port = process.env.PORT || 3001;
 app.post('/send-email', async (req, res) => {
   const { name, email, subject, message, recaptchaToken } = req.body;
 
+  if (!name || !email || !subject || !message || !recaptchaToken) {
+    res.status(400).send({ message: 'Missing required fields' });
+    return;
+  }
+
   try {
     const recaptchaResponse = await axios.post(
       `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`);
 
-      console.log(recaptchaResponse.data);
+    console.log(recaptchaResponse.data);
     if (!recaptchaResponse.data || !recaptchaResponse.data.success) {
       throw new Error('Recaptcha failed');
     }
 
-    await sendgrid.send({
-      to: 'me@jairedjawed.com',
-      from: 'me@jairedjawed.com',
-      subject: `Email from Portfolio Website: ${subject}`,
-      text: `
-        Name: ${name}
-        Email Address: ${email}
-        Message: ${message}
-      `,
-    });
+    if (process.env.SENDGRID_API_KEY === undefined) {
+      await sendgrid.send({
+        to: 'me@jairedjawed.com',
+        from: 'me@jairedjawed.com',
+        subject: `Email from Portfolio Website: ${subject}`,
+        text: `
+          Name: ${name}
+          Email Address: ${email}
+          Message: ${message}
+        `,
+      });
+    }
+
     res.status(200).send('Successfully sent email!');
   } catch (err) {
     console.error(err);
