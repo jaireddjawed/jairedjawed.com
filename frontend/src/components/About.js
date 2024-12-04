@@ -4,11 +4,8 @@ class About extends Component {
    render() {
 
       if (this.props.data) {
-         var name = this.props.data.name;
          var bio = this.props.data.bio;
-         var phone = this.props.data.phone;
          var email = this.props.data.email;
-         var resumeDownload = this.props.data.resumedownload;
       }
 
       return (
