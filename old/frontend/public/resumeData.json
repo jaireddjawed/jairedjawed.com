@@ -1,0 +1,104 @@
+{
+  "main": {
+    "name":"Jaired Jawed",
+    "bio":"A responsible, detail-oriented, and steadfast engineer that is able to pick up things quickly and contribute to a team. Has extenstive experience in React, Node, SQL, Golang, k8s and other technologies.",
+    "email": "me@jairedjawed.com",
+    "phone": "(951)-437-9849",
+    "resumedownload":"./Resume.pdf",
+    "social":[
+      {
+        "name":"linkedin",
+        "url":"https://www.linkedin.com/in/jaired/",
+        "className":"fa fa-linkedin"
+      },
+      {
+        "name":"github",
+        "url":"https://github.com/jaireddjawed",
+        "className":"fa fa-github"
+      }
+    ]
+  },
+  "resume":{
+    "education":[
+      {
+        "school": "University of California - Riverside",
+        "degree": "M.S. Computer Science",
+        "graduated": "Jun 2023"
+      },
+      {
+        "school": "University of California - Riverside",
+        "degree": "B.S. Computer Science",
+        "graduated": "Jun 2022"
+      }
+    ],
+    "work":[
+      {
+        "company": "Jawed Tutoring",
+        "title":"Owner",
+        "years":"Starting Jan 2025",
+        "details": [
+          "Developed web application that lets students schedule online tutoring sessions and keep track of their progress.",
+          "Tutoring students in full-stack web development and data science, where most students have the eventual goal of becoming a contributor in the tech industry."
+        ]
+      },
+      {
+        "company": "HashiCorp Inc.",
+        "title":"Software Engineer, Vault",
+        "years":"Aug 2023 - Present",
+        "details": [
+          "",
+          "Implemented "
+        ]
+      },
+      {
+        "company": "HashiCorp Inc.",
+        "title":"Software Engineer Intern, Vault",
+        "years":"Jun 2022 - Sep 2022",
+        "details": []
+      },
+      {
+        "company": "edx Boot Camps",
+        "title":"Senior Software Development Tutor",
+        "years":"Jan 2020 - Jun 2023",
+        "details": [
+          "Tutored coding boot camp students in full-stack web development and data visualization by using technologies such as React.JS, Node.JS, D3.JS, Pandas, Matplotlib, Visual Basic, & SQL",
+          "Developed Python program to automatically send session confirmation emails to all students"
+        ]
+      },
+      {
+        "company": "Chegg Inc.",
+        "title":"Software Engineer Intern",
+        "years":"Jun 2021 - Aug 2021",
+        "details": [
+          "Developed web application to replace Adminer, an internal legacy application that allows staff to input SQL queries into the production database",
+          "Reduced website outages by verifying that database modifications inputted by employees would not remove sensitive information"
+        ]
+      },
+      {
+        "company": "Base 11",
+        "title": "Software Engineer Intern",
+        "years": "Jul 2020 - Aug 2020",
+        "details": [
+          "Produced 3D models of objects by using OnShape and NX CAD software",
+          "Developed Python program to control a Raspberry Pi-powered rover remotely through keyboard and voice through web sockets and the wit.ai API"
+        ]
+      }
+    ]
+  },
+  "portfolio":{
+    "projects": [
+      {
+        "title":"Auto Student Email",
+        "category":"A program that automatically sends out confirmation emails to coding boot camp students.",
+        "image":"autostudentemail.png",
+        "url":"https://github.com/jaireddjawed/auto-student-email"
+      },
+      {
+        "title":"Shoeshine Guild",
+        "category":"An iOS app where customers can request for their shoes to be shined or repaired and have it delivered to their house using the Postmates API",
+        "image":"shoeshine.png",
+        "url":"https://apps.apple.com/us/app/the-shoeshine-guild/id1477500668"
+      }
+    ]
+  }
+}
