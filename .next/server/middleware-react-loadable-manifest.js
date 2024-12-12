@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST='{"components/main.tsx -> particles-bg":{"id":5207,"files":["static/chunks/207.5a34111e78273474.js"]}}';
