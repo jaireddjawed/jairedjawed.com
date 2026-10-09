@@ -8,6 +8,17 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        mono: [
+          "var(--font-ibm-plex-mono)",
+          "ui-monospace",
+          "SFMono-Regular",
+          "var(--font-jetbrains-mono)",
+          "Menlo",
+          "Consolas",
+          "monospace",
+        ],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
