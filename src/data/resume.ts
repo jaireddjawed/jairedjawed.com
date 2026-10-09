@@ -1,0 +1,195 @@
+export type Job = {
+  company: string;
+  title: string;
+  dates: string;
+  location?: string;
+  note?: string;
+  details: string[];
+};
+
+export type School = {
+  school: string;
+  location: string;
+  degrees: { degree: string; graduated: string }[];
+};
+
+export type Project = {
+  title: string;
+  tagline: string;
+  url: string;
+  image: string;
+  details: string[];
+};
+
+export type SkillGroup = {
+  label: string;
+  items: string[];
+};
+
+export const social = [
+  { name: "Email", url: "mailto:me@jairedjawed.com" },
+  { name: "GitHub", url: "https://github.com/jaireddjawed" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/jaired/" },
+  { name: "Resume", url: "/JairedJawed_Resume.pdf" },
+  { name: "Tutoring", url: "https://tutoring.jairedjawed.com" },
+];
+
+export const skills: SkillGroup[] = [
+  { label: "Languages", items: ["Go", "TypeScript/JavaScript", "Python", "SQL"] },
+  { label: "Frontend", items: ["React", "Next.js"] },
+  { label: "Backend", items: ["Node.js", "GraphQL", "gRPC", "REST APIs", "WebSockets"] },
+  {
+    label: "Infrastructure/Cloud",
+    items: ["Kubernetes", "Terraform", "Vault", "Docker", "AWS", "Azure"],
+  },
+  { label: "Databases", items: ["PostgreSQL", "MongoDB", "Neo4j"] },
+  { label: "Developer Tooling", items: ["AI Agents", "GitHub Actions", "CI/CD", "Datadog"] },
+];
+
+export const experience: Job[] = [
+  {
+    company: "HashiCorp",
+    title: "Software Engineer, Vault Ecosystem",
+    dates: "Nov 2024 – Present",
+    location: "Remote",
+    note: "HashiCorp is now an IBM company.",
+    details: [
+      "Led development of real-time secret synchronization in the Vault Secrets Operator, enabling Kubernetes workloads to receive updated secrets without restarts through WebSocket-based updates.",
+      "Developed PKI External CA integration for Vault Agent, automating certificate issuance and renewal through ACME and enabling applications to consume externally signed certificates without manual lifecycle management.",
+      "Developed Azure Static Roles support in Vault, enabling secure management of long-lived Azure credentials for enterprise environments.",
+      "Built orphaned secret cleanup workflows in the Vault Secrets Operator, reducing stale secret accumulation and improving Kubernetes operational hygiene.",
+      "Mentored a junior developer and two interns through onboarding, accelerating ramp-up and enabling them to contribute independently to production projects.",
+    ],
+  },
+  {
+    company: "Woooly.ai",
+    title: "Founding Engineer",
+    dates: "Feb 2026 – Sep 2026",
+    location: "Remote",
+    details: [
+      "Led development of the entire full-stack application, a hiring platform that lets companies evaluate candidates based on their skills and how effectively they use AI in the workplace.",
+    ],
+  },
+  {
+    company: "HashiCorp",
+    title: "Software Engineer, Vault Dedicated",
+    dates: "Aug 2023 – Nov 2024",
+    location: "Remote",
+    details: [
+      "Led development of validation and synchronization systems for Vault Dedicated, enabling secure Secret Sync replication across Vercel, Google Cloud, and Azure.",
+      "Built disaster recovery health checks and automated Route 53 failover workflows for highly available Vault infrastructure deployments.",
+      "Participated in on-call rotations for production Vault infrastructure, troubleshooting outages and restoring service during critical incidents.",
+    ],
+  },
+  {
+    company: "University of California, Riverside",
+    title: "Teaching Assistant",
+    dates: "Jan 2023 – Jun 2023",
+    location: "Riverside, CA",
+    details: [
+      "Taught introductory C++ and data structures to undergraduate students.",
+      "Graded students' assignments and provided feedback.",
+    ],
+  },
+  {
+    company: "2U",
+    title: "Software Development Tutor",
+    dates: "Jan 2020 – Jun 2023",
+    location: "Remote",
+    details: [
+      "Tutored coding boot camp students in full-stack web development and data visualization using React, Node.js, D3.js, Pandas, Matplotlib, Visual Basic, and SQL.",
+      "Developed a Python program to automatically send session confirmation emails to all students.",
+    ],
+  },
+  {
+    company: "HashiCorp",
+    title: "Software Engineer Intern, Vault Dedicated",
+    dates: "Jun 2022 – Sep 2022",
+    location: "Remote",
+    details: [
+      "Developed cluster filtering functionality by creation date and tier in Vault Dedicated, improving operational efficiency for incident response workflows.",
+    ],
+  },
+  {
+    company: "University of California, Riverside",
+    title: "Computer Science Transfer Mentor",
+    dates: "Sep 2021 – Jun 2022",
+    location: "Riverside, CA",
+    details: [
+      "Mentored fellow transfer students through their first year at the university, helping them establish connections and a community.",
+    ],
+  },
+  {
+    company: "Chegg",
+    title: "Software Engineer Intern",
+    dates: "Jun 2021 – Aug 2021",
+    location: "Remote",
+    details: [
+      "Developed secure CRUD APIs for internal student data management workflows, replacing direct SQL query processes and reducing operational risk.",
+    ],
+  },
+  {
+    company: "Base 11",
+    title: "Software Engineer Intern",
+    dates: "Jul 2020 – Aug 2020",
+    location: "Remote",
+    details: [
+      "Produced 3D models of objects using OnShape and NX CAD software.",
+      "Developed a Python program to control a Raspberry Pi-powered rover remotely by keyboard and voice through web sockets and the wit.ai API.",
+    ],
+  },
+  {
+    company: "Moreno Valley College",
+    title: "Student Aide II",
+    dates: "Aug 2019 – Aug 2020",
+    location: "Moreno Valley, CA",
+    details: [
+      "Influenced K-12 students at local schools and colleges to choose STEM careers.",
+      "Produced objects from 3D printers using CAD software.",
+      "Developed C++ and Python programs for Raspberry Pi and Arduino microcontrollers.",
+    ],
+  },
+  {
+    company: "Crowdbotics",
+    title: "Software Engineer (Contract)",
+    dates: "Aug 2019 – Dec 2019",
+    location: "Remote",
+    details: [
+      "Developed minimum viable iOS and Android apps for The Shoeshine Guild, a business that handles shoeshines and repairs.",
+      "Implemented user authentication, payment processing, and push notifications using React Native, Expo, Stripe, and Firebase.",
+      "Implemented delivery service using the Postmates API.",
+    ],
+  },
+];
+
+export const education: School[] = [
+  {
+    school: "University of California, Riverside",
+    location: "Riverside, CA",
+    degrees: [
+      { degree: "M.S. Computer Science", graduated: "Dec 2025" },
+      { degree: "B.S. Computer Science", graduated: "Aug 2022" },
+    ],
+  },
+];
+
+export const projects: Project[] = [
+  {
+    title: "Angelic Ascensions Tarot",
+    tagline: "Full-stack e-commerce and scheduling platform",
+    url: "https://www.angelicascensionstarot.com/",
+    image: "/portfolio/angelic-ascensions-tarot.png",
+    details: [
+      "Built and operate a production Next.js/TypeScript e-commerce and appointment scheduling platform processing $3K+ in transactions per month.",
+      "Designed a concurrency-safe scheduling system using PostgreSQL transactions and database locking to prevent double bookings.",
+      "Built checkout, payment processing, automated reminders, and account-based booking workflows, contributing to a 50% increase in sales.",
+    ],
+  },
+  {
+    title: "Felisa Cafe",
+    tagline: "Online ordering for a Filipino-American café concept in Fullerton",
+    url: "https://felisacafe.com/",
+    image: "/portfolio/felisa-cafe.png",
+    details: [],
+  },
+];
