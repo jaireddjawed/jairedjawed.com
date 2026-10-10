@@ -4,6 +4,8 @@ import { Job } from "@/data/resume";
 
 type ExperienceProps = {
   jobs: Job[];
+  id?: string;
+  title?: string;
   children?: ReactNode;
 };
 
@@ -27,9 +29,14 @@ function renderDetail(detail: string): ReactNode[] {
   });
 }
 
-export default function Experience({ jobs, children }: ExperienceProps): JSX.Element {
+export default function Experience({
+  jobs,
+  id = "experience",
+  title = "Experience",
+  children,
+}: ExperienceProps): JSX.Element {
   return (
-    <Section id="experience" title="Experience">
+    <Section id={id} title={title}>
       <ol className="flex flex-col gap-10 border-l border-slate-300 dark:border-slate-700 pl-6">
         {jobs.map((job) => (
           <li key={`${job.company}-${job.title}`}>
@@ -47,7 +54,7 @@ export default function Experience({ jobs, children }: ExperienceProps): JSX.Ele
             </p>
             {job.note && (
               <p className="text-sm italic text-slate-500 dark:text-slate-400">
-                {job.note}
+                {renderDetail(job.note)}
               </p>
             )}
             {job.details.length > 0 && (

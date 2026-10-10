@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {JSX} from "react";
 import Section from "@/components/section";
 import Tag from "@/components/tag";
@@ -17,14 +18,16 @@ export default function Tutoring(): JSX.Element {
             <Tag key={subject}>{subject}</Tag>
           ))}
         </div>
-        <a
-          href={tutoring.url}
-          target="_blank"
-          rel="noopener noreferrer"
+        <p className="text-slate-600 dark:text-slate-400">
+          <span className="dark:text-slate-100 font-semibold">{tutoring.price}</span>{" "}
+          {tutoring.priceUnit}
+        </p>
+        <Link
+          href="/tutoring"
           className="rounded-md bg-accent text-background px-5 py-2.5 font-semibold hover:opacity-80"
         >
           Book a session
-        </a>
+        </Link>
       </div>
     </Section>
   );

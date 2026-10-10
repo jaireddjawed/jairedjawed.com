@@ -39,7 +39,7 @@ function Navigation() {
         <li>
           <a
             target="_blank"
-            href="https://tutoring.jairedjawed.com"
+            href="/tutoring"
           >
             Tutoring
           </a>
@@ -95,7 +95,7 @@ function Header({ data }) {
         <div className="pill">
           Tutoring service resumes on <strong>Jan 6, 2025</strong>. Reserve a
           tutoring session in advance{" "}
-          <a href="https://tutoring.jairedjawed.com">here</a>.
+          <a href="/tutoring">here</a>.
         </div>
         <div className="banner-text">
           <h1 className="responsive-headline">{data.name}</h1>

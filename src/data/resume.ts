@@ -5,6 +5,7 @@ export type Job = {
   location?: string;
   note?: string;
   featured?: boolean;
+  teaching?: boolean;
   // Details may contain [text](url) links.
   details: string[];
 };
@@ -57,7 +58,7 @@ export const experience: Job[] = [
     featured: true,
     dates: "Nov 2024 – Present",
     location: "Remote",
-    note: "HashiCorp is now an IBM company.",
+    note: "HashiCorp is [now an IBM company](https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp,-creates-comprehensive,-end-to-end-hybrid-cloud-platform).",
     details: [
       "Led development of [real-time secret synchronization](https://github.com/hashicorp/vault-secrets-operator/pull/1159) in the Vault Secrets Operator, enabling Kubernetes workloads to receive updated secrets without restarts through WebSocket-based updates.",
       "Developed [PKI External CA integration](https://developer.hashicorp.com/vault/docs/agent-and-proxy/agent/pki-external-ca) for Vault Agent, automating certificate issuance and renewal through ACME and enabling applications to consume externally signed certificates without manual lifecycle management.",
@@ -91,6 +92,7 @@ export const experience: Job[] = [
   {
     company: "University of California, Riverside",
     title: "Teaching Assistant",
+    teaching: true,
     dates: "Jan 2023 – Jun 2023",
     location: "Riverside, CA",
     details: [
@@ -101,6 +103,7 @@ export const experience: Job[] = [
   {
     company: "2U",
     title: "Software Development Tutor",
+    teaching: true,
     dates: "Jan 2020 – Jun 2023",
     location: "Remote",
     details: [
@@ -245,9 +248,31 @@ export const projects: Project[] = [
     stack: ["Nuxt"],
     details: [],
   },
+  {
+    title: "TTP Attendance",
+    tagline: "Attendance app for the Transfer Student Center at UC Riverside",
+    url: "https://github.com/jaireddjawed/TTP-Attendance",
+    image: "/portfolio/ttp-attendance.png",
+    stack: ["Python", "JavaScript", "Google Sheets API"],
+    details: [
+      "Built a desktop app that signs students in by form or by swiping their student ID card, and saves each visit to a Google Sheet.",
+    ],
+  },
 ];
 
 export const tutoring = {
-  url: "https://tutoring.jairedjawed.com",
+  calLink: "jairedjawed/tutoring-session",
   subjects: ["Full-stack development", "Data visualization"],
+  topics: [
+    { label: "Frontend", items: ["React", "Vue", "JavaScript/TypeScript", "HTML & CSS"] },
+    { label: "Backend", items: ["Laravel", "Node.js", "Go", "SQL"] },
+    {
+      label: "Data & Visualization",
+      items: ["Python", "Jupyter", "Pandas", "Matplotlib", "D3.js"],
+    },
+    { label: "CS Fundamentals", items: ["Data structures", "Algorithms", "C++"] },
+  ] as SkillGroup[],
+  price: "$65",
+  priceUnit: "per one-hour session",
+  guarantee: "If you're not satisfied with a session, you get your money back.",
 };
