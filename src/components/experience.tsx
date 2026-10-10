@@ -47,7 +47,7 @@ export default function Experience({ jobs, children }: ExperienceProps): JSX.Ele
             </p>
             {job.note && (
               <p className="text-sm italic text-slate-500 dark:text-slate-400">
-                {job.note}
+                {renderDetail(job.note)}
               </p>
             )}
             {job.details.length > 0 && (

@@ -57,7 +57,7 @@ export const experience: Job[] = [
     featured: true,
     dates: "Nov 2024 – Present",
     location: "Remote",
-    note: "HashiCorp is now an IBM company.",
+    note: "HashiCorp is [now an IBM company](https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp,-creates-comprehensive,-end-to-end-hybrid-cloud-platform).",
     details: [
       "Led development of [real-time secret synchronization](https://github.com/hashicorp/vault-secrets-operator/pull/1159) in the Vault Secrets Operator, enabling Kubernetes workloads to receive updated secrets without restarts through WebSocket-based updates.",
       "Developed [PKI External CA integration](https://developer.hashicorp.com/vault/docs/agent-and-proxy/agent/pki-external-ca) for Vault Agent, automating certificate issuance and renewal through ACME and enabling applications to consume externally signed certificates without manual lifecycle management.",
@@ -248,6 +248,6 @@ export const projects: Project[] = [
 ];
 
 export const tutoring = {
-  url: "https://tutoring.jairedjawed.com",
+  calLink: "jairedjawed/tutoring-session",
   subjects: ["Full-stack development", "Data visualization"],
 };
