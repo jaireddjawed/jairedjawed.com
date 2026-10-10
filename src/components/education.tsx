@@ -17,9 +17,11 @@ export default function Education(): JSX.Element {
               {school.degrees.map((degree) => (
                 <li key={degree.degree} className="flex justify-between gap-4">
                   <span>{degree.degree}</span>
-                  <span className="text-sm text-slate-500 dark:text-slate-400 shrink-0">
-                    {degree.graduated}
-                  </span>
+                  {degree.graduated && (
+                    <span className="text-sm text-slate-500 dark:text-slate-400 shrink-0">
+                      {degree.graduated}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

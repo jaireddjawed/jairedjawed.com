@@ -13,7 +13,7 @@ export type School = {
   school: string;
   location: string;
   note?: string;
-  degrees: { degree: string; graduated: string }[];
+  degrees: { degree: string; graduated?: string }[];
 };
 
 export type Project = {
@@ -47,6 +47,7 @@ export const skills: SkillGroup[] = [
   },
   { label: "Databases", items: ["PostgreSQL", "MongoDB", "Neo4j"] },
   { label: "Developer Tooling", items: ["AI Agents", "GitHub Actions", "CI/CD", "Datadog"] },
+  { label: "Spoken Languages", items: ["English", "Spanish"] },
 ];
 
 export const experience: Job[] = [
@@ -178,6 +179,15 @@ export const education: School[] = [
     degrees: [
       { degree: "M.S. Computer Science", graduated: "Jun 2023" },
       { degree: "B.S. Computer Science", graduated: "Aug 2022" },
+    ],
+  },
+  {
+    school: "Moreno Valley College",
+    location: "Moreno Valley, CA",
+    note: "🦁 go lions",
+    degrees: [
+      { degree: "A.S. Computer Science", graduated: "Aug 2020" },
+      { degree: "A.S. Math and Science", graduated: "Jun 2020" },
     ],
   },
 ];
