@@ -276,3 +276,31 @@ export const tutoring = {
   priceUnit: "per one-hour session",
   guarantee: "If you're not satisfied with a session, you get your money back.",
 };
+
+export const interests = {
+  hobbies: ["Hiking", "Traveling", "Distance running"],
+  story:
+    "I went to Ivalo, Finland in 2024 to catch the northern lights near the solar maximum, and liked it so much that I went back for more in Fairbanks, Alaska the following year. Finland bottomed out at -1°F but was windier. Alaska got as cold as -50°F some nights. Closer to home I hike and run, mostly 5Ks.",
+  photos: [
+    {
+      src: "/interests/ivalo-finland.jpg",
+      alt: "Standing on a snowy field under the northern lights in Ivalo, Finland",
+      caption: "Ivalo, Finland · 2024",
+    },
+    {
+      src: "/interests/fairbanks-alaska.jpg",
+      alt: "A band of green northern lights over snow-covered trees near Fairbanks, Alaska",
+      caption: "Fairbanks, Alaska · 2025",
+    },
+    {
+      src: "/interests/yosemite.jpg",
+      alt: "Yosemite Valley with El Capitan on the left",
+      caption: "Yosemite",
+    },
+    {
+      src: "/interests/lunar-module.jpg",
+      alt: "An Apollo lunar module on display in a museum",
+      caption: "Lunar module, up close",
+    },
+  ],
+};

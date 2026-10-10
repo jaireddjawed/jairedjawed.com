@@ -1,0 +1,7 @@
+# Keep every image on this site out of Google Images.
+User-agent: Googlebot-Image
+Disallow: /
+
+# Keep personal photos away from all crawlers.
+User-agent: *
+Disallow: /interests/
