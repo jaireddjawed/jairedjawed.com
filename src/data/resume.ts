@@ -34,7 +34,7 @@ export type SkillGroup = {
 };
 
 export const social = [
-  { name: "Email", url: "mailto:me@jairedjawed.com" },
+  { name: "Email", url: "mailto:inquiries@jairedjawed.com" },
   { name: "GitHub", url: "https://github.com/jaireddjawed" },
   { name: "LinkedIn", url: "https://www.linkedin.com/in/jaired/" },
   { name: "Resume", url: "/JairedJawed_Resume.pdf" },
@@ -344,7 +344,7 @@ export const tutoringJsonLd = {
 };
 
 export const webDevelopment = {
-  email: "me@jairedjawed.com",
+  email: "inquiries@jairedjawed.com",
   services: [
     {
       title: "Business websites",
