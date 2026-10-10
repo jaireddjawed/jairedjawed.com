@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import Footer from "@/components/footer";
 import { IBM_Plex_Mono, JetBrains_Mono } from "next/font/google";
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${ibmPlexMono.variable} ${jetbrainsMono.variable} font-mono`}>
       <Component {...pageProps} />
+      <Footer />
     </div>
   );
 }

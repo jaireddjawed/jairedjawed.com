@@ -1,5 +1,6 @@
 import {JSX} from "react";
 import Section from "@/components/section";
+import Tag from "@/components/tag";
 import { education, skills } from "@/data/resume";
 
 export default function Education(): JSX.Element {
@@ -22,6 +23,11 @@ export default function Education(): JSX.Element {
                 </li>
               ))}
             </ul>
+            {school.note && (
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
+                {school.note}
+              </p>
+            )}
           </div>
         ))}
       </div>
@@ -35,12 +41,7 @@ export default function Education(): JSX.Element {
             <dt className="dark:text-slate-100 font-semibold">{group.label}</dt>
             <dd className="flex flex-wrap gap-2">
               {group.items.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-slate-300 dark:border-slate-700 px-3 py-0.5 text-sm"
-                >
-                  {item}
-                </span>
+                <Tag key={item}>{item}</Tag>
               ))}
             </dd>
           </div>

@@ -5,12 +5,22 @@
 :root {
     --background: rgb(248 250 252);
     --foreground: rgb(15 23 42);
+    --accent: 5 150 105;
+    --grid-dot: rgb(15 23 42 / 0.18);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --background: #0a0a0a;
         --foreground: rgb(203 213 225);
+        --accent: 52 211 153;
+        --grid-dot: rgb(203 213 225 / 0.16);
+    }
+}
+
+@layer base {
+    h1, h2, h3 {
+        @apply font-heading;
     }
 }
 
@@ -20,4 +30,62 @@ html {
 
 body {
     color: var(--foreground);
-    background: var(--background);}
+    background: var(--background);
+}
+
+.hero-grid {
+    background-image: radial-gradient(circle, var(--grid-dot) 1px, transparent 1px);
+    background-size: 24px 24px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+.hero-typing {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: bottom;
+    width: 6ch;
+    animation: hero-typing 0.9s steps(6) 0.4s both;
+}
+
+.hero-cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1.1em;
+    margin-left: 0.15em;
+    vertical-align: text-bottom;
+    background: rgb(var(--accent));
+    animation: hero-blink 1s steps(1) infinite;
+}
+
+.hero-reveal {
+    animation: hero-reveal 0.5s ease-out 1.5s both;
+}
+
+@keyframes hero-typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes hero-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes hero-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(0.5rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-typing,
+    .hero-cursor,
+    .hero-reveal {
+        animation: none;
+    }
+}
