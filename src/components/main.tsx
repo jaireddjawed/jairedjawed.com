@@ -6,6 +6,7 @@ const sections = [
   { name: "Education", href: "#education" },
   { name: "Portfolio", href: "#portfolio" },
   { name: "Tutoring", href: "/tutoring" },
+  { name: "Blog", href: "/blog" },
 ];
 
 export default function Main(): JSX.Element  {
