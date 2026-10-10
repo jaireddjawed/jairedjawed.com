@@ -22,6 +22,8 @@ export type Project = {
   tagline: string;
   url?: string;
   image: string;
+  // Built for a paying client.
+  client?: boolean;
   stack: string[];
   details: string[];
 };
@@ -202,6 +204,7 @@ export const education: School[] = [
 export const projects: Project[] = [
   {
     title: "Angelic Ascensions Tarot",
+    client: true,
     tagline: "Full-stack e-commerce and scheduling platform",
     url: "https://www.angelicascensionstarot.com/",
     image: "/portfolio/angelic-ascensions-tarot.png",
@@ -214,6 +217,7 @@ export const projects: Project[] = [
   },
   {
     title: "On Track Fitness",
+    client: true,
     tagline: "Multi-trainer scheduling, payments, and 24/7 door access for a Philadelphia gym",
     url: "https://on-track-fitness.com/",
     image: "/portfolio/on-track-fitness.png",
@@ -226,6 +230,7 @@ export const projects: Project[] = [
   },
   {
     title: "Felisa Cafe",
+    client: true,
     tagline: "Online storefront for a Filipino-American café concept in Fullerton, CA",
     url: "https://felisacafe.com/",
     image: "/portfolio/felisa-cafe.png",
@@ -234,6 +239,7 @@ export const projects: Project[] = [
   },
   {
     title: "Law by Castillo",
+    client: true,
     tagline: "Spanish-language website for a litigation and arbitration boutique in Lima, Peru",
     url: "https://lawbycastillo.com/",
     image: "/portfolio/law-by-castillo.png",
@@ -242,6 +248,7 @@ export const projects: Project[] = [
   },
   {
     title: "Instituto de Derecho Indiano",
+    client: true,
     tagline: "Spanish-language website for a legal history research institute in Lima, Peru",
     url: "https://www.institutodederechoindiano.com/",
     image: "/portfolio/instituto-de-derecho-indiano.png",
@@ -334,4 +341,70 @@ export const tutoringJsonLd = {
     priceCurrency: "USD",
     description: "One-hour, one-on-one tutoring session",
   },
+};
+
+export const webDevelopment = {
+  email: "me@jairedjawed.com",
+  services: [
+    {
+      title: "Business websites",
+      description:
+        "A fast, clear site that tells people who you are, what you offer, and how to reach you. Designed to look right on phones first.",
+    },
+    {
+      title: "Online stores and ordering",
+      description:
+        "Menus, product catalogs, carts, and checkout, with payments through Stripe or Square.",
+    },
+    {
+      title: "Booking and scheduling",
+      description:
+        "Let customers book and pay for appointments online, across one calendar or a whole team, without double bookings.",
+    },
+    {
+      title: "Custom integrations",
+      description:
+        "Connect your site to the tools you already use, from payment processors to door access systems.",
+    },
+    {
+      title: "Design",
+      description:
+        "Layout, color, and type built around your brand, whether you have a logo and style already or are starting from nothing.",
+    },
+    {
+      title: "English and Spanish",
+      description:
+        "I work in both languages and have built Spanish-language sites for clients in Peru.",
+    },
+  ],
+  process: [
+    {
+      title: "Email me",
+      description:
+        "Tell me about your business and what you need the site to do. Links to sites you like help.",
+    },
+    {
+      title: "Get a quote",
+      description:
+        "I'll reply with any questions, then send a quote and a timeline based on the scope.",
+    },
+    {
+      title: "Design and build",
+      description:
+        "You see the site as it takes shape and give feedback along the way, so there are no surprises at the end.",
+    },
+    {
+      title: "Launch",
+      description: "I put the site live on your domain and make sure everything works for real customers.",
+    },
+  ],
+};
+
+export const webDevelopmentJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Website Design and Development",
+  serviceType: "Web design and development",
+  url: "https://jairedjawed.com/web-development",
+  provider: person,
 };
