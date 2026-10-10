@@ -47,7 +47,7 @@ export default function TutoringPage() {
         <SkillGrid groups={tutoring.topics} />
         <p className="mt-6 text-slate-600 dark:text-slate-400">
           Not sure whether your topic fits?{" "}
-          <a href="mailto:me@jairedjawed.com" className="text-accent underline hover:no-underline">
+          <a href="mailto:inquiries@jairedjawed.com" className="text-accent underline hover:no-underline">
             Email me
           </a>{" "}
           before you book.
