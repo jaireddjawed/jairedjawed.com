@@ -4,7 +4,7 @@ import { laMap } from "@/data/la-map";
 
 export default function Location(): JSX.Element {
   return (
-    <Section id="location" title="Greater Los Angeles">
+    <Section id="location" title="Greater Los Angeles 🌴">
       <figure className="overflow-hidden rounded-lg border border-slate-300 dark:border-slate-700">
         <svg
           viewBox={`-10 -10 ${laMap.width + 20} ${laMap.height + 20}`}
@@ -34,7 +34,7 @@ export default function Location(): JSX.Element {
           />
         </svg>
         <figcaption className="flex flex-wrap justify-between gap-x-6 gap-y-1 border-t border-slate-300 dark:border-slate-700 px-5 py-3 text-sm text-slate-500 dark:text-slate-400">
-          <span>Based in Greater Los Angeles, working remotely</span>
+          <span>Based in Greater Los Angeles, working remotely 🧑‍💻</span>
           <span>34.05° N, 118.24° W</span>
         </figcaption>
       </figure>

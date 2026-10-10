@@ -13,7 +13,7 @@ export type School = {
   school: string;
   location: string;
   note?: string;
-  degrees: { degree: string; graduated?: string }[];
+  degrees: { degree: string; detail?: string; graduated?: string }[];
 };
 
 export type Project = {
@@ -38,8 +38,8 @@ export const social = [
 ];
 
 export const skills: SkillGroup[] = [
-  { label: "Languages", items: ["Go", "TypeScript/JavaScript", "Python", "SQL"] },
-  { label: "Frontend", items: ["React", "Next.js"] },
+  { label: "Languages", items: ["Go", "TypeScript/JavaScript", "Python", "C++", "SQL"] },
+  { label: "Frontend", items: ["React", "React Native", "Next.js"] },
   { label: "Backend", items: ["Node.js", "GraphQL", "gRPC", "REST APIs", "WebSockets"] },
   {
     label: "Infrastructure/Cloud",
@@ -84,7 +84,7 @@ export const experience: Job[] = [
     location: "Remote",
     details: [
       "Led development of validation and synchronization systems for Vault Dedicated, enabling secure [Secret Sync](https://developer.hashicorp.com/vault/docs/sync) replication across Vercel, Google Cloud, and Azure.",
-      "Built disaster recovery health checks and automated Route 53 failover workflows for highly available Vault infrastructure deployments.",
+      "Built [disaster recovery](https://developer.hashicorp.com/vault/cloud/what-is-hcp-vault/high-avail-disaster-recover) health checks and automated Route 53 failover workflows for highly available Vault infrastructure deployments.",
       "Participated in on-call rotations for production Vault infrastructure, troubleshooting outages and restoring service during critical incidents.",
     ],
   },
@@ -177,7 +177,11 @@ export const education: School[] = [
     location: "Riverside, CA",
     note: "🐻 🍊 go highlanders",
     degrees: [
-      { degree: "M.S. Computer Science", graduated: "Jun 2023" },
+      {
+        degree: "M.S. Computer Science",
+        detail: "Concentration in theory, algorithms, and AI",
+        graduated: "Jun 2023",
+      },
       { degree: "B.S. Computer Science", graduated: "Aug 2022" },
     ],
   },

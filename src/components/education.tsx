@@ -16,7 +16,14 @@ export default function Education(): JSX.Element {
             <ul className="mt-3 flex flex-col gap-1">
               {school.degrees.map((degree) => (
                 <li key={degree.degree} className="flex justify-between gap-4">
-                  <span>{degree.degree}</span>
+                  <span>
+                    {degree.degree}
+                    {degree.detail && (
+                      <span className="block text-sm text-slate-500 dark:text-slate-400">
+                        {degree.detail}
+                      </span>
+                    )}
+                  </span>
                   {degree.graduated && (
                     <span className="text-sm text-slate-500 dark:text-slate-400 shrink-0">
                       {degree.graduated}

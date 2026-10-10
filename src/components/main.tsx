@@ -25,7 +25,7 @@ export default function Main(): JSX.Element  {
         Software Engineer at HashiCorp, an IBM Company
       </h3>
       <p className="hero-reveal italic text-center text-slate-500 dark:text-slate-400">
-        Engineering is the pursuit of perfection.
+        Engineering is the pursuit of perfection 🏃.
       </p>
       <p className="hero-reveal mt-2 flex items-center gap-2 rounded-full border border-accent/40 px-4 py-1 text-sm">
         <span className="h-2 w-2 rounded-full bg-accent animate-pulse motion-reduce:animate-none" />
