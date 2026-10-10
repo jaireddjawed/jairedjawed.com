@@ -6,6 +6,7 @@ type ExperienceProps = {
   jobs: Job[];
   id?: string;
   title?: string;
+  level?: 1 | 2;
   children?: ReactNode;
 };
 
@@ -33,10 +34,11 @@ export default function Experience({
   jobs,
   id = "experience",
   title = "Experience",
+  level,
   children,
 }: ExperienceProps): JSX.Element {
   return (
-    <Section id={id} title={title}>
+    <Section id={id} title={title} level={level}>
       <ol className="flex flex-col gap-10 border-l border-slate-300 dark:border-slate-700 pl-6">
         {jobs.map((job) => (
           <li key={`${job.company}-${job.title}`}>

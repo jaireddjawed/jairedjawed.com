@@ -1,15 +1,17 @@
 import Head from "next/head";
 import {JSX} from "react";
 
-const siteUrl = "https://jairedjawed.com";
+export const siteUrl = "https://jairedjawed.com";
 
 type SeoProps = {
   title: string;
   description: string;
   path: string;
+  // schema.org structured data for this page.
+  jsonLd?: Record<string, unknown>;
 };
 
-export default function Seo({ title, description, path }: SeoProps): JSX.Element {
+export default function Seo({ title, description, path, jsonLd }: SeoProps): JSX.Element {
   const url = `${siteUrl}${path}`;
   const image = `${siteUrl}/og.png`;
 
@@ -32,6 +34,12 @@ export default function Seo({ title, description, path }: SeoProps): JSX.Element
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
     </Head>
   );
 }
