@@ -3,6 +3,7 @@ import Main from "@/components/main";
 import Experience from "@/components/experience";
 import Location from "@/components/location";
 import Education from "@/components/education";
+import OffTheClock from "@/components/off-the-clock";
 import Portfolio from "@/components/portfolio";
 import Seo from "@/components/seo";
 import Tutoring from "@/components/tutoring";
@@ -25,6 +26,7 @@ export default function Index() {
       <Education />
       <Portfolio />
       <Tutoring />
+      <OffTheClock />
       <Location />
     </>
   );

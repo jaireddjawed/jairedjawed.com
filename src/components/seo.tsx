@@ -17,6 +17,7 @@ export default function Seo({ title, description, path }: SeoProps): JSX.Element
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="robots" content="noimageindex" />
       <link rel="canonical" href={url} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Jaired Jawed" />
