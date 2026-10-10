@@ -7,7 +7,7 @@ import OffTheClock from "@/components/off-the-clock";
 import Portfolio from "@/components/portfolio";
 import Seo from "@/components/seo";
 import Tutoring from "@/components/tutoring";
-import { experience } from "@/data/resume";
+import { experience, personJsonLd } from "@/data/resume";
 
 export default function Index() {
   return (
@@ -16,6 +16,7 @@ export default function Index() {
         title="Jaired Jawed | Software Engineer"
         description="Software Engineer at HashiCorp, an IBM Company, working on Vault and Kubernetes. I also build production web apps for small businesses and tutor full-stack development."
         path="/"
+        jsonLd={personJsonLd}
       />
       <Main />
       <Experience jobs={experience.filter((job) => job.featured)}>

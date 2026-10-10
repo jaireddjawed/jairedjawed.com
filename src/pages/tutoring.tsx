@@ -5,15 +5,16 @@ import Section from "@/components/section";
 import Seo from "@/components/seo";
 import SkillGrid from "@/components/skill-grid";
 import Tag from "@/components/tag";
-import { experience, tutoring } from "@/data/resume";
+import { experience, tutoring, tutoringJsonLd } from "@/data/resume";
 
 export default function TutoringPage() {
   return (
     <>
       <Seo
-        title="Coding Tutoring | Jaired Jawed"
+        title="Online Coding Tutor for React, Python, and Data Structures | Jaired Jawed"
         description={`One-on-one coding tutoring with Jaired Jawed in full-stack development and data visualization. ${tutoring.price} ${tutoring.priceUnit}.`}
         path="/tutoring"
+        jsonLd={tutoringJsonLd}
       />
       <nav className="mx-auto max-w-4xl px-6 pt-10">
         <Link href="/" className="text-accent hover:underline">
@@ -21,7 +22,7 @@ export default function TutoringPage() {
         </Link>
       </nav>
 
-      <Section id="tutoring" title="One-on-One Coding Tutoring">
+      <Section id="tutoring" title="One-on-One Coding Tutoring" level={1}>
         <p className="text-lg leading-relaxed">
           I&apos;m a software engineer at HashiCorp who spent over three years
           tutoring coding boot camp students and taught undergraduates as a

@@ -16,7 +16,7 @@ export default function ExperiencePage() {
           ← Jaired Jawed
         </Link>
       </nav>
-      <Experience jobs={experience} />
+      <Experience jobs={experience} level={1} />
     </>
   );
 }

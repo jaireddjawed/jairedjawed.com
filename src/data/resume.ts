@@ -304,3 +304,34 @@ export const interests = {
     },
   ],
 };
+
+const person = {
+  "@type": "Person",
+  name: "Jaired Jawed",
+  url: "https://jairedjawed.com",
+  jobTitle: "Software Engineer",
+  worksFor: { "@type": "Organization", name: "HashiCorp" },
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "University of California, Riverside" },
+    { "@type": "CollegeOrUniversity", name: "Moreno Valley College" },
+  ],
+  knowsLanguage: ["English", "Spanish"],
+  sameAs: ["https://github.com/jaireddjawed", "https://www.linkedin.com/in/jaired/"],
+};
+
+export const personJsonLd = { "@context": "https://schema.org", ...person };
+
+export const tutoringJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "One-on-One Coding Tutoring",
+  serviceType: "Coding tutoring",
+  url: "https://jairedjawed.com/tutoring",
+  provider: person,
+  offers: {
+    "@type": "Offer",
+    price: "65",
+    priceCurrency: "USD",
+    description: "One-hour, one-on-one tutoring session",
+  },
+};

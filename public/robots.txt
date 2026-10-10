@@ -5,3 +5,5 @@ Disallow: /
 # Keep personal photos away from all crawlers.
 User-agent: *
 Disallow: /interests/
+
+Sitemap: https://jairedjawed.com/sitemap.xml
