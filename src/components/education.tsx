@@ -1,6 +1,6 @@
 import {JSX} from "react";
 import Section from "@/components/section";
-import Tag from "@/components/tag";
+import SkillGrid from "@/components/skill-grid";
 import { education, skills } from "@/data/resume";
 
 export default function Education(): JSX.Element {
@@ -44,18 +44,7 @@ export default function Education(): JSX.Element {
       <h3 className="dark:text-slate-100 font-semibold text-2xl mt-12 mb-6">
         Skills
       </h3>
-      <dl className="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-x-6 gap-y-3">
-        {skills.map((group) => (
-          <div key={group.label} className="contents">
-            <dt className="dark:text-slate-100 font-semibold">{group.label}</dt>
-            <dd className="flex flex-wrap gap-2">
-              {group.items.map((item) => (
-                <Tag key={item}>{item}</Tag>
-              ))}
-            </dd>
-          </div>
-        ))}
-      </dl>
+      <SkillGrid groups={skills} />
     </Section>
   );
 }

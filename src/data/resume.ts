@@ -5,6 +5,7 @@ export type Job = {
   location?: string;
   note?: string;
   featured?: boolean;
+  teaching?: boolean;
   // Details may contain [text](url) links.
   details: string[];
 };
@@ -91,6 +92,7 @@ export const experience: Job[] = [
   {
     company: "University of California, Riverside",
     title: "Teaching Assistant",
+    teaching: true,
     dates: "Jan 2023 – Jun 2023",
     location: "Riverside, CA",
     details: [
@@ -101,6 +103,7 @@ export const experience: Job[] = [
   {
     company: "2U",
     title: "Software Development Tutor",
+    teaching: true,
     dates: "Jan 2020 – Jun 2023",
     location: "Remote",
     details: [
@@ -245,9 +248,31 @@ export const projects: Project[] = [
     stack: ["Nuxt"],
     details: [],
   },
+  {
+    title: "TTP Attendance",
+    tagline: "Attendance app for the Transfer Student Center at UC Riverside",
+    url: "https://github.com/jaireddjawed/TTP-Attendance",
+    image: "/portfolio/ttp-attendance.png",
+    stack: ["Python", "JavaScript", "Google Sheets API"],
+    details: [
+      "Built a desktop app that signs students in by form or by swiping their student ID card, and saves each visit to a Google Sheet.",
+    ],
+  },
 ];
 
 export const tutoring = {
   calLink: "jairedjawed/tutoring-session",
   subjects: ["Full-stack development", "Data visualization"],
+  topics: [
+    { label: "Frontend", items: ["React", "Vue", "JavaScript/TypeScript", "HTML & CSS"] },
+    { label: "Backend", items: ["Laravel", "Node.js", "Go", "SQL"] },
+    {
+      label: "Data & Visualization",
+      items: ["Python", "Jupyter", "Pandas", "Matplotlib", "D3.js"],
+    },
+    { label: "CS Fundamentals", items: ["Data structures", "Algorithms", "C++"] },
+  ] as SkillGroup[],
+  price: "$65",
+  priceUnit: "per one-hour session",
+  guarantee: "If you're not satisfied with a session, you get your money back.",
 };

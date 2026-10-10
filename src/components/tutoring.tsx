@@ -1,15 +1,10 @@
 import Link from "next/link";
-import {JSX, ReactNode} from "react";
+import {JSX} from "react";
 import Section from "@/components/section";
 import Tag from "@/components/tag";
 import { tutoring } from "@/data/resume";
 
-type TutoringProps = {
-  // Rendered below the pitch in place of the "Book a session" button.
-  booking?: ReactNode;
-};
-
-export default function Tutoring({ booking }: TutoringProps): JSX.Element {
+export default function Tutoring(): JSX.Element {
   return (
     <Section id="tutoring" title="Tutoring">
       <div className="rounded-lg border border-slate-300 dark:border-slate-700 p-8 flex flex-col items-start gap-5">
@@ -23,16 +18,17 @@ export default function Tutoring({ booking }: TutoringProps): JSX.Element {
             <Tag key={subject}>{subject}</Tag>
           ))}
         </div>
-        {!booking && (
-          <Link
-            href="/tutoring"
-            className="rounded-md bg-accent text-background px-5 py-2.5 font-semibold hover:opacity-80"
-          >
-            Book a session
-          </Link>
-        )}
+        <p className="text-slate-600 dark:text-slate-400">
+          <span className="dark:text-slate-100 font-semibold">{tutoring.price}</span>{" "}
+          {tutoring.priceUnit}
+        </p>
+        <Link
+          href="/tutoring"
+          className="rounded-md bg-accent text-background px-5 py-2.5 font-semibold hover:opacity-80"
+        >
+          Book a session
+        </Link>
       </div>
-      {booking && <div className="mt-10">{booking}</div>}
     </Section>
   );
 }
