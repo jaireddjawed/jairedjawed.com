@@ -1,18 +1,29 @@
 import Image from "next/image";
-import {JSX} from "react";
+import {JSX, ReactNode} from "react";
 import Section from "@/components/section";
 import Tag from "@/components/tag";
-import { projects } from "@/data/resume";
+import { Project, projects } from "@/data/resume";
 
-export default function Portfolio(): JSX.Element {
+type PortfolioProps = {
+  title?: string;
+  intro?: ReactNode;
+  items?: Project[];
+  children?: ReactNode;
+};
+
+export default function Portfolio({
+  title = "Portfolio",
+  intro = "No to-do apps here. Real businesses, real customers, real money. If anything breaks, I hear about it.",
+  items = projects,
+  children,
+}: PortfolioProps): JSX.Element {
   return (
-    <Section id="portfolio" title="Portfolio">
+    <Section id="portfolio" title={title}>
       <p className="-mt-6 mb-10 text-lg text-slate-600 dark:text-slate-400">
-        No to-do apps here. Real businesses, real customers, real money. If
-        anything breaks, I hear about it.
+        {intro}
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project) => {
+        {items.map((project) => {
           const image = (
             <Image
               src={project.image}
@@ -70,6 +81,7 @@ export default function Portfolio(): JSX.Element {
           );
         })}
       </div>
+      {children}
     </Section>
   );
 }

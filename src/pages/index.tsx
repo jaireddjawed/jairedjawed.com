@@ -25,7 +25,11 @@ export default function Index() {
         </Link>
       </Experience>
       <Education />
-      <Portfolio />
+      <Portfolio>
+        <Link href="/web-development" className="mt-10 inline-block font-semibold text-accent hover:underline">
+          Need a site like these? →
+        </Link>
+      </Portfolio>
       <Tutoring />
       <OffTheClock />
       <Location />

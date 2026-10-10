@@ -10,6 +10,7 @@ const urls = [
   { loc: "/" },
   { loc: "/experience" },
   { loc: "/tutoring" },
+  { loc: "/web-development" },
 ];
 
 // Blog posts are Markdown files; drafts are skipped.
