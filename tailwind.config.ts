@@ -10,7 +10,6 @@ export default {
     extend: {
       fontFamily: {
         mono: [
-          "var(--font-ibm-plex-mono)",
           "ui-monospace",
           "SFMono-Regular",
           "var(--font-jetbrains-mono)",
@@ -18,10 +17,17 @@ export default {
           "Consolas",
           "monospace",
         ],
+        heading: [
+          "var(--font-ibm-plex-mono)",
+          "var(--font-jetbrains-mono)",
+          "ui-monospace",
+          "monospace",
+        ],
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        accent: "rgb(var(--accent) / <alpha-value>)",
       },
     },
   },

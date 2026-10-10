@@ -1,12 +1,37 @@
-import {JSX} from "react";
+import {JSX, ReactNode} from "react";
 import Section from "@/components/section";
-import { experience } from "@/data/resume";
+import { Job } from "@/data/resume";
 
-export default function Experience(): JSX.Element {
+type ExperienceProps = {
+  jobs: Job[];
+  children?: ReactNode;
+};
+
+function renderDetail(detail: string): ReactNode[] {
+  return detail.split(/(\[[^\]]+\]\([^)]+\))/).map((part) => {
+    const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!link) {
+      return part;
+    }
+    return (
+      <a
+        key={link[2]}
+        href={link[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-accent underline hover:no-underline"
+      >
+        {link[1]}
+      </a>
+    );
+  });
+}
+
+export default function Experience({ jobs, children }: ExperienceProps): JSX.Element {
   return (
     <Section id="experience" title="Experience">
       <ol className="flex flex-col gap-10 border-l border-slate-300 dark:border-slate-700 pl-6">
-        {experience.map((job) => (
+        {jobs.map((job) => (
           <li key={`${job.company}-${job.title}`}>
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-x-4">
               <h3 className="dark:text-slate-100 font-semibold text-xl">
@@ -28,13 +53,14 @@ export default function Experience(): JSX.Element {
             {job.details.length > 0 && (
               <ul className="mt-3 list-disc pl-5 flex flex-col gap-2 leading-relaxed">
                 {job.details.map((detail) => (
-                  <li key={detail}>{detail}</li>
+                  <li key={detail}>{renderDetail(detail)}</li>
                 ))}
               </ul>
             )}
           </li>
         ))}
       </ol>
+      {children}
     </Section>
   );
 }

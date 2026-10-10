@@ -4,20 +4,24 @@ export type Job = {
   dates: string;
   location?: string;
   note?: string;
+  featured?: boolean;
+  // Details may contain [text](url) links.
   details: string[];
 };
 
 export type School = {
   school: string;
   location: string;
+  note?: string;
   degrees: { degree: string; graduated: string }[];
 };
 
 export type Project = {
   title: string;
   tagline: string;
-  url: string;
+  url?: string;
   image: string;
+  stack: string[];
   details: string[];
 };
 
@@ -31,7 +35,6 @@ export const social = [
   { name: "GitHub", url: "https://github.com/jaireddjawed" },
   { name: "LinkedIn", url: "https://www.linkedin.com/in/jaired/" },
   { name: "Resume", url: "/JairedJawed_Resume.pdf" },
-  { name: "Tutoring", url: "https://tutoring.jairedjawed.com" },
 ];
 
 export const skills: SkillGroup[] = [
@@ -50,20 +53,22 @@ export const experience: Job[] = [
   {
     company: "HashiCorp",
     title: "Software Engineer, Vault Ecosystem",
+    featured: true,
     dates: "Nov 2024 – Present",
     location: "Remote",
     note: "HashiCorp is now an IBM company.",
     details: [
-      "Led development of real-time secret synchronization in the Vault Secrets Operator, enabling Kubernetes workloads to receive updated secrets without restarts through WebSocket-based updates.",
-      "Developed PKI External CA integration for Vault Agent, automating certificate issuance and renewal through ACME and enabling applications to consume externally signed certificates without manual lifecycle management.",
-      "Developed Azure Static Roles support in Vault, enabling secure management of long-lived Azure credentials for enterprise environments.",
-      "Built orphaned secret cleanup workflows in the Vault Secrets Operator, reducing stale secret accumulation and improving Kubernetes operational hygiene.",
+      "Led development of [real-time secret synchronization](https://github.com/hashicorp/vault-secrets-operator/pull/1159) in the Vault Secrets Operator, enabling Kubernetes workloads to receive updated secrets without restarts through WebSocket-based updates.",
+      "Developed [PKI External CA integration](https://developer.hashicorp.com/vault/docs/agent-and-proxy/agent/pki-external-ca) for Vault Agent, automating certificate issuance and renewal through ACME and enabling applications to consume externally signed certificates without manual lifecycle management.",
+      "Developed [Azure Static Roles support](https://developer.hashicorp.com/vault/docs/secrets/azure#static-roles) in Vault, enabling secure management of long-lived Azure credentials for enterprise environments.",
+      "Built [orphaned secret cleanup workflows](https://github.com/hashicorp/vault-secrets-operator/pull/980) in the Vault Secrets Operator, reducing stale secret accumulation and improving Kubernetes operational hygiene.",
       "Mentored a junior developer and two interns through onboarding, accelerating ramp-up and enabling them to contribute independently to production projects.",
     ],
   },
   {
     company: "Woooly.ai",
     title: "Founding Engineer",
+    featured: true,
     dates: "Feb 2026 – Sep 2026",
     location: "Remote",
     details: [
@@ -73,10 +78,11 @@ export const experience: Job[] = [
   {
     company: "HashiCorp",
     title: "Software Engineer, Vault Dedicated",
+    featured: true,
     dates: "Aug 2023 – Nov 2024",
     location: "Remote",
     details: [
-      "Led development of validation and synchronization systems for Vault Dedicated, enabling secure Secret Sync replication across Vercel, Google Cloud, and Azure.",
+      "Led development of validation and synchronization systems for Vault Dedicated, enabling secure [Secret Sync](https://developer.hashicorp.com/vault/docs/sync) replication across Vercel, Google Cloud, and Azure.",
       "Built disaster recovery health checks and automated Route 53 failover workflows for highly available Vault infrastructure deployments.",
       "Participated in on-call rotations for production Vault infrastructure, troubleshooting outages and restoring service during critical incidents.",
     ],
@@ -104,6 +110,7 @@ export const experience: Job[] = [
   {
     company: "HashiCorp",
     title: "Software Engineer Intern, Vault Dedicated",
+    featured: true,
     dates: "Jun 2022 – Sep 2022",
     location: "Remote",
     details: [
@@ -122,6 +129,7 @@ export const experience: Job[] = [
   {
     company: "Chegg",
     title: "Software Engineer Intern",
+    featured: true,
     dates: "Jun 2021 – Aug 2021",
     location: "Remote",
     details: [
@@ -166,8 +174,9 @@ export const education: School[] = [
   {
     school: "University of California, Riverside",
     location: "Riverside, CA",
+    note: "🐻 🍊 go highlanders",
     degrees: [
-      { degree: "M.S. Computer Science", graduated: "Dec 2025" },
+      { degree: "M.S. Computer Science", graduated: "Jun 2023" },
       { degree: "B.S. Computer Science", graduated: "Aug 2022" },
     ],
   },
@@ -179,17 +188,52 @@ export const projects: Project[] = [
     tagline: "Full-stack e-commerce and scheduling platform",
     url: "https://www.angelicascensionstarot.com/",
     image: "/portfolio/angelic-ascensions-tarot.png",
+    stack: ["Laravel", "React"],
     details: [
-      "Built and operate a production Next.js/TypeScript e-commerce and appointment scheduling platform processing $3K+ in transactions per month.",
+      "Built and operate a production Laravel/React e-commerce and appointment scheduling platform processing $3K+ in transactions per month.",
       "Designed a concurrency-safe scheduling system using PostgreSQL transactions and database locking to prevent double bookings.",
       "Built checkout, payment processing, automated reminders, and account-based booking workflows, contributing to a 50% increase in sales.",
     ],
   },
   {
+    title: "On Track Fitness",
+    tagline: "Multi-trainer scheduling, payments, and 24/7 door access for a Philadelphia gym",
+    url: "https://on-track-fitness.com/",
+    image: "/portfolio/on-track-fitness.png",
+    stack: ["Express.js", "React", "Stripe", "Kisi"],
+    details: [
+      "Built a scheduling platform for personal training that books across multiple trainers, each with their own availability.",
+      "Integrated Stripe for payment processing.",
+      "Integrated Kisi access control so members can get into the gym 24/7 and newcomers can buy a one-hour pass to try it out.",
+    ],
+  },
+  {
     title: "Felisa Cafe",
-    tagline: "Online ordering for a Filipino-American café concept in Fullerton",
+    tagline: "Online storefront for a Filipino-American café concept in Fullerton, CA",
     url: "https://felisacafe.com/",
     image: "/portfolio/felisa-cafe.png",
+    stack: ["Laravel", "Square"],
+    details: ["Built the storefront: menu, cart, and order-ahead checkout with payments through Square."],
+  },
+  {
+    title: "Law by Castillo",
+    tagline: "Spanish-language website for a litigation and arbitration boutique in Lima, Peru",
+    url: "https://lawbycastillo.com/",
+    image: "/portfolio/law-by-castillo.png",
+    stack: ["Next.js"],
+    details: [],
+  },
+  {
+    title: "Instituto de Derecho Indiano",
+    tagline: "Spanish-language website for a legal history research institute in Lima, Peru",
+    url: "https://www.institutodederechoindiano.com/",
+    image: "/portfolio/instituto-de-derecho-indiano.png",
+    stack: ["Nuxt"],
     details: [],
   },
 ];
+
+export const tutoring = {
+  url: "https://tutoring.jairedjawed.com",
+  subjects: ["Full-stack development", "Data visualization"],
+};
