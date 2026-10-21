@@ -10,6 +10,20 @@ type ExperienceProps = {
   children?: ReactNode;
 };
 
+// Tells readers what kind of page an inline link opens.
+function linkLabel(url: string): string {
+  if (/github\.com\/[^/]+\/[^/]+\/pull\//.test(url)) {
+    return "PR";
+  }
+  if (url.includes("developer.hashicorp.com")) {
+    return "Docs";
+  }
+  if (url.includes("newsroom.")) {
+    return "Announcement";
+  }
+  return "Link";
+}
+
 function renderDetail(detail: string): ReactNode[] {
   return detail.split(/(\[[^\]]+\]\([^)]+\))/).map((part) => {
     const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
@@ -25,6 +39,9 @@ function renderDetail(detail: string): ReactNode[] {
         className="text-accent underline hover:no-underline"
       >
         {link[1]}
+        <span className="ml-1 inline-block whitespace-nowrap rounded border border-accent/40 px-1 text-xs">
+          {linkLabel(link[2])} ↗
+        </span>
       </a>
     );
   });
