@@ -25,6 +25,8 @@ export type Project = {
   // Built for a paying client.
   client?: boolean;
   stack: string[];
+  // The hardest engineering problem in the project, shown in its own box.
+  highlight?: { title: string; description: string };
   details: string[];
 };
 
@@ -209,9 +211,13 @@ export const projects: Project[] = [
     url: "https://www.angelicascensionstarot.com/",
     image: "/portfolio/angelic-ascensions-tarot.png",
     stack: ["Laravel", "React"],
+    highlight: {
+      title: "Concurrency-safe booking with payments",
+      description:
+        "Bookings check that a time is still open, authorize the payment, reserve the slot under a PostgreSQL lock, and capture the payment only if the booking succeeds. Customers can't double-book or grab a time the admin is blocking off at the same moment, and nobody is charged for a booking that failed.",
+    },
     details: [
       "Built and operate a production Laravel/React e-commerce and appointment scheduling platform processing $3K+ in transactions per month.",
-      "Designed a concurrency-safe scheduling system using PostgreSQL transactions and database locking to prevent double bookings.",
       "Built checkout, payment processing, automated reminders, and account-based booking workflows, contributing to a 50% increase in sales.",
     ],
   },
@@ -222,8 +228,12 @@ export const projects: Project[] = [
     url: "https://on-track-fitness.com/",
     image: "/portfolio/on-track-fitness.png",
     stack: ["Express.js", "React", "Stripe", "Kisi"],
+    highlight: {
+      title: "Multi-trainer availability",
+      description:
+        "A harder version of concurrency-safe booking: availability depends on several trainers' schedules at once instead of a single calendar, while still preventing double bookings.",
+    },
     details: [
-      "Built a scheduling platform for personal training that books across multiple trainers, each with their own availability.",
       "Integrated Stripe for payment processing.",
       "Integrated Kisi access control so members can get into the gym 24/7 and newcomers can buy a one-hour pass to try it out.",
     ],
