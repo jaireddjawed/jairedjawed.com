@@ -8,6 +8,7 @@ type PortfolioProps = {
   title?: string;
   intro?: ReactNode;
   items?: Project[];
+  showHighlights?: boolean;
   children?: ReactNode;
 };
 
@@ -15,6 +16,7 @@ export default function Portfolio({
   title = "Portfolio",
   intro = "No to-do apps here. Real businesses, real customers, real money. If anything breaks, I hear about it.",
   items = projects,
+  showHighlights = true,
   children,
 }: PortfolioProps): JSX.Element {
   return (
@@ -67,6 +69,17 @@ export default function Portfolio({
                     {project.stack.map((item) => (
                       <Tag key={item}>{item}</Tag>
                     ))}
+                  </div>
+                )}
+                {showHighlights && project.highlight && (
+                  <div className="mt-4 rounded-md border border-accent/40 bg-accent/5 p-4">
+                    <p className="text-accent text-xs">{"// engineering highlight"}</p>
+                    <h4 className="mt-1 dark:text-slate-100 font-semibold">
+                      {project.highlight.title}
+                    </h4>
+                    <p className="mt-1 text-sm leading-relaxed">
+                      {project.highlight.description}
+                    </p>
                   </div>
                 )}
                 {project.details.length > 0 && (

@@ -57,6 +57,7 @@ export default function WebDevelopmentPage() {
         title="Recent Work"
         intro="Live sites I designed and built for clients. Click any of them to see it running."
         items={projects.filter((project) => project.client)}
+        showHighlights={false}
       />
 
       <Section id="process" title="How It Works">
