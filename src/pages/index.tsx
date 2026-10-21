@@ -14,7 +14,7 @@ export default function Index() {
     <>
       <Seo
         title="Jaired Jawed | Software Engineer"
-        description="Software Engineer at HashiCorp, an IBM Company, working on Vault and Kubernetes. I also build production web apps for small businesses and tutor full-stack development."
+        description="Software Engineer at HashiCorp, an IBM Company, working on Vault, Kubernetes and distributed systems. I also build production web apps for small businesses and tutor full-stack development."
         path="/"
         jsonLd={personJsonLd}
       />

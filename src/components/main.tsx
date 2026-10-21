@@ -23,14 +23,10 @@ export default function Main(): JSX.Element  {
         Jaired Jawed
       </h1>
       <h3 className="hero-reveal dark:text-slate-300 font-semibold text-xl sm:text-2xl text-center">
-        Software Engineer at HashiCorp, an IBM Company
+        Software Engineer at HashiCorp | Go, Kubernetes & Distributed Systems
       </h3>
       <p className="hero-reveal italic text-center text-slate-500 dark:text-slate-400">
         Engineering is the pursuit of perfection 🏃.
-      </p>
-      <p className="hero-reveal mt-2 flex items-center gap-2 rounded-full border border-accent/40 px-4 py-1 text-sm">
-        <span className="h-2 w-2 rounded-full bg-accent animate-pulse motion-reduce:animate-none" />
-        shipping to production since 2019
       </p>
       <nav className="hero-reveal mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-lg">
         {sections.map((section) => (
