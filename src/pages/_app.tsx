@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/next";
 import Footer from "@/components/footer";
 import { IBM_Plex_Mono, JetBrains_Mono } from "next/font/google";
 
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <div className={`${ibmPlexMono.variable} ${jetbrainsMono.variable} font-mono`}>
       <Component {...pageProps} />
       <Footer />
+      <Analytics />
     </div>
   );
 }
